@@ -1,0 +1,32 @@
+<div class="center">
+  <h1>
+    Genre Analyser
+  </h1>
+  <button mat-raised-button type="button" (click)="audioFile.click()">Select Audio File</button>
+
+  <!-- <input #fileInput name="file" type="file" (change)="handleFileInput($event.target.files)">
+  <button mat-raised-button class="standard-button" (click)="uploadFile()">Upload file</button>
+ <br> -->
+ <!-- <input #audioFile name="file" type="file" (change)="handleFileInput($event.target.files)"> -->
+
+  <input hidden type="file" id="audioFile" #audioFile (change)="audioChange()" accept="audio/*"/>
+  
+  <!-- <button mat-raised-button class="standard-button" (click)="uploadFile()">Upload file</button> -->
+
+  <br/>
+  <audio hidden id="audioPlayer" #audioPlayer></audio>
+</div>
+<strong>The name of the song:&nbsp;&nbsp;{{analyserService.audioName}}</strong> 
+<div class="mt-1">
+  <mat-grid-list cols="2" rowHeight="3:1">
+    <mat-grid-tile>
+      <app-waveform-visualizer></app-waveform-visualizer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-frequency-visualizer></app-frequency-visualizer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<button mat-raised-button class="standard-button" (click)="uploadFile()">Upload File Test </button>
+<app-prediction-visualizer></app-prediction-visualizer>
