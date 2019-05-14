@@ -3,16 +3,7 @@
     Genre Analyser
   </h1>
   <button mat-raised-button type="button" (click)="audioFile.click()">Select Audio File</button>
-
-  <!-- <input #fileInput name="file" type="file" (change)="handleFileInput($event.target.files)">
-  <button mat-raised-button class="standard-button" (click)="uploadFile()">Upload file</button>
- <br> -->
- <!-- <input #audioFile name="file" type="file" (change)="handleFileInput($event.target.files)"> -->
-
   <input hidden type="file" id="audioFile" #audioFile (change)="audioChange()" accept="audio/*"/>
-  
-  <!-- <button mat-raised-button class="standard-button" (click)="uploadFile()">Upload file</button> -->
-
   <br/>
   <audio hidden id="audioPlayer" #audioPlayer></audio>
 </div>
@@ -27,6 +18,10 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-
-<button mat-raised-button class="standard-button" (click)="uploadFile()">Upload File Test </button>
-<app-prediction-visualizer></app-prediction-visualizer>
+<button mat-raised-button class="standard-button" (click)="uploadFile()">Upload File</button>
+<div *ngIf="flag">
+  <div echarts [options]="chartOption"></div>
+</div>
+<br>
+<br>
+<!-- <app-echart-visualizer></app-echart-visualizer> -->

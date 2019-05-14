@@ -1,0 +1,9 @@
+<!-- <div *ngIf="probility">
+    <div echarts [options]="chartOption"></div>
+</div> -->
+
+<button mat-raised-button class="standard-button" (click)="getProbility()">Probability Distribution Map </button>
+<div *ngIf="data">
+    <div echarts [options]="chartOption"></div>
+</div>
+<!-- <div echarts [options]="chartOption"></div> -->

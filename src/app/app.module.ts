@@ -15,6 +15,10 @@ import { PredictionVisualizerComponent } from './prediction-visualizer/predictio
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
 
+
+import {NgxEchartsModule} from 'ngx-echarts';
+import { EchartVisualizerComponent } from './echart-visualizer/echart-visualizer.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +27,7 @@ import { HttpClientModule } from "@angular/common/http";
     FrequencyVisualizerComponent,
     SegmentsVisualizerComponent,
     PredictionVisualizerComponent,
+    EchartVisualizerComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import { HttpClientModule } from "@angular/common/http";
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
-    HttpClientModule 
+    HttpClientModule,
+
+    NgxEchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

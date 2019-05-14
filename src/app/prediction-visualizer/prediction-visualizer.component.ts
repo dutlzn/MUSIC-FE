@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./prediction-visualizer.component.css']
 })
 export class PredictionVisualizerComponent implements OnInit {
-  datainfo: any;
+  datainfo: string;
+  
   constructor(
     private httpClient: HttpClient,
   ) { }
