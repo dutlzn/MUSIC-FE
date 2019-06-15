@@ -4,7 +4,7 @@ import { GenreAnalyserService } from '../genre-analyser.service';
 import {CommiunicationService }  from '../commiunication.service'
 import { HttpClient } from '@angular/common/http';
 import { switchMap, map, catchError, startWith } from 'rxjs/operators';
-
+import { environment } from 'src/environments/environment'
 
 /* Root app for genre analyser. */
 @Component({
@@ -69,7 +69,7 @@ export class GenreAnalyserComponent implements OnInit, AfterViewInit {
     this.communicationservice.parseTable(files).pipe(
       switchMap((data:any) =>{
         console.log("发送成功");
-        return this.httpClient.get('http://127.0.0.1:5000/genres_info');
+        return this.httpClient.get(environment.GENERS_INFO);
       }),
       map(data => {
         this.datainfo = data['genres'];
@@ -101,7 +101,7 @@ export class GenreAnalyserComponent implements OnInit, AfterViewInit {
               margin: 8,
               formatter: '{value}',
               textStyle: {
-                  color: 'blue',
+                  color: 'white',
                   fontFamily: 'sans-serif',
                   fontSize: 17,
                   fontStyle: 'italic',
@@ -118,7 +118,8 @@ export class GenreAnalyserComponent implements OnInit, AfterViewInit {
                       margin: 18,
                       formatter: '{value}',    // Template formatter!
                       textStyle: {
-                          color: '#1e90ff',
+                          // color: '#1e90ff',
+                          color: 'white',
                           fontFamily: 'verdana',
                           fontSize: 13,
                           fontStyle: 'normal',

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommiunicationService {
   
-  backendAddress:String = 'http://127.0.0.1:5000';
+  backendAddress:String = environment.BE_URL;
   constructor(private readonly http: HttpClient) {
    }
 

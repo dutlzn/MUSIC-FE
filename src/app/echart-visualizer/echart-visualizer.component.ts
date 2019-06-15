@@ -4,7 +4,7 @@ import { GenreAnalyserService } from '../genre-analyser.service';
 import {CommiunicationService }  from '../commiunication.service'
 import { HttpClient } from '@angular/common/http';
 import { switchMap, map, catchError, startWith } from 'rxjs/operators';
-
+import { environment } from 'src/environments/environment'
 
 @Component({
   selector: 'app-echart-visualizer',
@@ -28,7 +28,7 @@ export class EchartVisualizerComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
   getProbility(){
-    this.httpClient.get('http://127.0.0.1:5000/genres_info').subscribe( data =>{
+    this.httpClient.get(environment.GENERS_INFO).subscribe( data =>{
       this.data = data['probility'];
       console.log(this.data);
     });

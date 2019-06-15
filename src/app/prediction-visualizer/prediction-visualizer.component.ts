@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-
+import { environment } from 'src/environments/environment'
 @Component({
   selector: 'app-prediction-visualizer',
   templateUrl: './prediction-visualizer.component.html',
@@ -14,19 +14,12 @@ export class PredictionVisualizerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.httpClient.get('http://127.0.0.1:5000/genres_info').subscribe(data => {
+    this.httpClient.get(environment.GENERS_INFO).subscribe(data => {
       console.log(data);
       console.log(data['genres']);
       this.datainfo = data['genres'];
     })
   }
 
-  // geners_info() {
-  //   this.httpClient.get('http://127.0.0.1:5000/genres_info').subscribe(data => {
-  //     console.log(data);
-  //     console.log(data['genres']);
-  //     this.datainfo = data['genres'];
-  //   })
-  // }
 
 }
